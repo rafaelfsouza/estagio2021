@@ -18,11 +18,9 @@
                 </form>
             </div>
             <div class="col-4 col-md-2 col-lg-1">
-                @can('auth', 'categorias.inserir')
                 <a href="{{ route('admin.categorias.create') }}" class="btn btn-block btn-outline-primary" data-toggle="tooltip" data-placement="left" title="Inserir">
                     <i class="fas fa-plus"></i>
                 </a>
-                @endcan
             </div>
         </div>
         <div class="row mt-5">
@@ -45,13 +43,9 @@
                                             <a href="{{ route('admin.categorias.show', ['id' => $row->id]) }}" class="btn btn-link btn-sm text-success mr-1" data-toggle="tooltip" data-placement="left" title="Informações">
                                                 <i class="fas fa-search"></i>
                                             </a>
-                                            @can('auth', 'categorias.editar')
                                             <a href="{{ route('admin.categorias.edit', ['id' => $row->id]) }}" class="btn btn-link btn-sm text-primary mr-1" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                                            @endcan
-                                            @can('auth', 'categorias.excluir')
                                             <button class="btn btn-link btn-sm text-danger btn-delete" data-label="{{ $row->categoria }}" data-url="{{ route('admin.categorias.destroy', $row->id) }}" data-toggle="tooltip" data-placement="left" title="Deletar">
                                                 <i class="far fa-trash-alt"></i></button>
-                                            @endcan
                                         </div>
                                     </td>
                                 </tr>
